@@ -1,0 +1,12 @@
+NetStabil is a native Kotlin network signal stabilizer and low-level radio diagnostics tool for Android 10 through Android 16 (API 29-36). Unlike fake "signal booster" apps, NetStabil uses real Android connectivity APIs, RFC-compliant protocols, and optional Shizuku or Root system interfaces to keep 4G LTE / 5G and Wi-Fi connections responsive in weak-signal areas.
+
+Key technical capabilities:
+
+* Hardware Cellular Radio Anchor & Baseband Keepalive Offload: Pins the cellular transport in the OS kernel (ConnectivityManager.requestNetwork + bindSocket) and offloads NATT keepalive packets directly to the cellular baseband processor (SocketKeepalive, 0% CPU wakeups with automatic 10s -> 15s -> 30s fallback).
+* 4G RRC Anti-Dormancy Turbo (3.2s): Sends lightweight low-delay micro-pulses (IPTOS_LOWDELAY, ~0.2 MB/hour) under the 5-second eNodeB inactivity timer to prevent RRC_CONNECTED -> RRC_IDLE drops and eliminate 200-800 ms wake-up lag.
+* Kernel Data Stall Monitor & Dual-Path Watchdog: Listens to Android ConnectivityDiagnosticsManager (DNS consecutive timeouts and TCP packet fail rate) combined with TCP + HTTP 204 validation (including Captive Portal detection) to recover frozen CGNAT data sessions without interrupting active GSM/VoLTE voice calls.
+* Turbo DNS Engine: Uses native Android Private DNS (DNS-over-TLS) when granted WRITE_SECURE_SETTINGS via Shizuku/Root, or a split-route (/32 DNS-only) local tunnel in Normal Mode featuring 0 ms RAM LRU cache, RFC 8767 Serve-Stale, parallel Happy Eyeballs UDP queries, and encrypted DoH (RFC 8484) / DoT (RFC 7858) fallback (Cloudflare, Quad9, Google, AdGuard).
+* Direct Modem & System Tuning (Optional Shizuku / Root): Direct 4G LTE Only RAT control (ITelephony), MediaTek AT+EPBSE LTE band locking & AT+EMMCHLCK PCI/EARFCN tower locking, in-memory CarrierConfig VoLTE/VoWiFi/4G+ override, DataStallRecoveryManager (DSRM) fast recovery timers, QUIC Multipath handover, Dual-SIM auto data switch, and screen-off Doze/Freezer shield with 1-tap factory restore.
+* Live RF Telemetry, Quick Tile & Home Widget: Real-time 3GPP EARFCN-to-LTE Band decoder (B1/B3/B7/B8/B20/B28/B38/B40/B41), 4G+ Carrier Aggregation, RSRP, RSRQ, SINR, CQI modulation (QPSK/16QAM/64QAM/256QAM), eNodeB ID, Timing Advance distance, 4-segment network diagnostics, Quick Settings Tile, and Home Screen Widget.
+
+100% Free and Open Source Software (GPLv3). Zero ads, zero analytics, zero tracking, and zero proprietary libraries. Bilingual interface (English & Romanian) with automatic detection and instant in-app toggle.

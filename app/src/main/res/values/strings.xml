@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NetStabil</string>
+    <string name="notif_channel_name">Active Connection Stabilizer</string>
+    <string name="notif_channel_desc">Shows real-time cellular/Wi-Fi signal telemetry and stabilizer status</string>
+    <string name="alert_channel_name">Network &amp; Reconnection Alerts</string>
+    <string name="alert_channel_desc">Notifies when data stalls occur or automatic recovery runs</string>
+    <string name="tile_label">NetStabil</string>
+    <string name="widget_description">Displays real-time 4G LTE band, signal dBm, ping latency, and 1-tap Start/Stop.</string>
+    <string name="widget_default_title">NetStabil • Monitoring</string>
+    <string name="widget_default_band">4G LTE</string>
+    <string name="widget_bullet">•</string>
+    <string name="widget_default_dbm">-- dBm</string>
+    <string name="widget_default_ping">-- ms</string>
+    <string name="widget_refresh_desc">Refresh signal</string>
+    <string name="widget_start_btn">START</string>
+</resources>

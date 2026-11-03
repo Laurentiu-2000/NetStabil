@@ -1,0 +1,4 @@
+v1.6.0 (build 13):
+- Full bilingual support (English & Romanian) with automatic device language detection and instant in-app RO/EN toggle.
+- F-Droid & IzzyOnDroid reproducible-build compliance (disabled encrypted dependency block and VCS metadata, 100% FOSS dependencies).
+- Hardened DNS cache validation, Captive Portal detection, Dual-SIM mobile data state detection, and Wi-Fi vs cellular recovery logic.

@@ -1,0 +1,25 @@
+# Android & Gradle build outputs
+.gradle/
+.kotlin/
+build/
+app/build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Local environment & IDE
+local.properties
+.idea/
+*.iml
+.DS_Store
+
+# Private signing keys (NEVER commit to public Git)
+keystore/
+*.jks
+*.keystore
+
+# Compiled packages
+*.apk
+*.aab
+*.ap_
+*.dex

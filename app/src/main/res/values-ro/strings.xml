@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NetStabil</string>
+    <string name="notif_channel_name">Stabilizare Conexiune Activă</string>
+    <string name="notif_channel_desc">Afișează starea în timp real a semnalului și a motorului de stabilizare</string>
+    <string name="alert_channel_name">Alerte Rețea și Reconectare</string>
+    <string name="alert_channel_desc">Notifică la pierderea conexiunii sau la reconectarea automată</string>
+    <string name="tile_label">NetStabil</string>
+    <string name="widget_description">Afișează în timp real banda 4G, puterea semnalului în dBm, ping-ul și butonul Pornit/Oprit.</string>
+    <string name="widget_default_title">NetStabil • Monitorizare</string>
+    <string name="widget_default_band">4G LTE</string>
+    <string name="widget_bullet">•</string>
+    <string name="widget_default_dbm">-- dBm</string>
+    <string name="widget_default_ping">-- ms</string>
+    <string name="widget_refresh_desc">Reîmprospătează semnalul</string>
+    <string name="widget_start_btn">PORNEȘTE</string>
+</resources>

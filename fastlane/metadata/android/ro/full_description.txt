@@ -1,0 +1,12 @@
+NetStabil este un stabilizator real de conexiune 4G LTE / 5G si Wi-Fi scris nativ in Kotlin pentru Android 10 pana la Android 16 (inclusiv Xiaomi HyperOS, Motorola MyUX, Samsung OneUI si Google Pixel). Nu promite amplificarea fizica imposibila a antenei, ci aplica mecanisme reale din AOSP, protocoale RFC si comenzi directe Shizuku / Root pentru a preveni inghetarea datelor mobile si caderea pe 2G.
+
+Functii tehnice principale:
+
+* Ancorare Hardware Modem 4G si Keepalive in Cipul Baseband (0% CPU): Mentine interfata celulara activa in kernel (requestNetwork + bindSocket) si deleaga pachetele NATT keepalive direct procesorului radio al modemului (SocketKeepalive cu fallback automat 10s -> 15s -> 30s).
+* Mod Turbo RRC Anti-Adormire (3.2s): Trimite micro-pulsuri Low-Delay (~0.2 MB/ora) sub pragul de inactivitate de 5s al stalpului 4G pentru a preveni caderea in RRC_IDLE si lag-ul de 200-800 ms la reluarea traficului.
+* Monitor Kernel Data Stall si Reconectare Inteligenta: Asculta alertele ConnectivityDiagnosticsManager din sistemul Android si verifica ruta IP + HTTP 204 (cu detectie Portal Captiv), resetand automat sesiunea de date inghetata fara a intrerupe apelurile GSM/VoLTE.
+* Motor Turbo DNS: Activeaza automat Private DNS nativ Android (DoT fara VPN) cand primeste permisiunea prin Shizuku/Root, sau foloseste un tunel local split-route (/32 strict pentru DNS) in Mod Normal cu Cache RAM 0 ms, Serve-Stale (RFC 8767), interogari UDP paralele si fallback criptat DoH/DoT (Cloudflare, Quad9, Google, AdGuard).
+* Control Direct Modem si Plafon Maxim prin Shizuku / Root: Comutare directa Doar 4G LTE (ITelephony), blocare benzi 4G MediaTek (B20/B3/B1/B7/B8/B28/B38/B40) si blocare stalp PCI/EARFCN, suprascriere CarrierConfig in memorie (VoLTE/VoWiFi/4G+), timpi rapizi DSRM (12-30s), Multipath QUIC, comutare automata Dual-SIM si scut anti-inghetare cu ecranul stins (cu revenire la valorile din fabrica la o atingere).
+* Telemetrie Radio Live, Buton Bara de Sus si Widget: Calculator 3GPP EARFCN -> Banda LTE, 4G+ LTE-A, RSRP, RSRQ, SINR, modulatie CQI, eNodeB, distanta estimata TA, diagnostic in 4 segmente, Quick Settings Tile si Widget pe ecran.
+
+100% Open Source (licenta GNU GPLv3), fara reclame, fara telemetrie si fara librarii proprietare. Interfata bilingva Romana / Engleza cu detectie automata si comutare instantanee.

@@ -1,0 +1,4 @@
+v1.6.0 (build 13):
+- Suport bilingv complet Romana + Engleza cu detectie automata dupa limba telefonului si buton rapid RO/EN in bara de sus.
+- Conformitate completa F-Droid si IzzyOnDroid Reproducible Builds (eliminare DEPENDENCY_INFO_BLOCK criptat si metadate VCS, 100% librarii FOSS).
+- Imbunatatiri validare DNS cache, detectie Portal Captiv Wi-Fi, detectie Dual-SIM si reconectare diferentiata Wi-Fi vs 4G.

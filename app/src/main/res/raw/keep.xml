@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@layout/widget_netstabil,@drawable/bg_widget_card,@drawable/bg_widget_pill_active,@drawable/bg_widget_pill_inactive,@drawable/ic_refresh_small,@drawable/ic_stat_signal,@xml/netstabil_widget_info,@xml/network_capabilities,@xml/network_security_config" />
